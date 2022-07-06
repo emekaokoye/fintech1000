@@ -1,0 +1,264 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> . 
+@prefix ft: <http://www.cymantiks.com/schema/fintech100-skos.ttl#>.
+
+<http://emeka.name.ng/data/profile.ttl#identity> a schema:Person  ;
+  	schema:name "Emeka Azuka Okoye";
+  	owl:sameAs <http://twitter.com/emekaokoye> .
+
+<http://www.cymantiks.com/schema/fintech100-skos.ttl>
+	dct:title	"Fintech1000 Taxonomy";
+	dct:description	"The Fintech1000 thesarus is a controlled and structured list of terms"@en;
+	rdfs:comment """This is a turtle document that uses Linked Data oriented content to describe a controlled and structured list of terms"""^^xsd:string ;
+	dct:creator <http://emeka.name.ng/data/profile.ttl#identity> ;
+	dct:date "2020-04-05"^^xsd:date ;
+	dct:date "2022-06-25"^^xsd:date ;
+	cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+	skos:definition "Simple Knowledge Organization System for Fintech1000"@en.
+
+
+ft:Fintech1000PlusScheme a skos:ConceptScheme ;
+    skos:prefLabel "The Fintech1000 knowledge organization system"@en ;
+    skos:altLabel "FinTech1000"@en ;
+    skos:hasTopConcept ft:fintech .
+
+
+ft:fintech rdf:type skos:Concept;
+	skos:prefLabel "FinTech1000+ Group"@en;
+	skos:altLabel "FINTECH1000"@en ;
+	skos:inScheme ft:Fintech1000PlusScheme .
+
+ft:Banking rdf:type skos:Concept;
+	skos:prefLabel "Banking"@en;
+	skos:altLabel "Digital Banking"@en;
+	skos:broader ft:fintech;
+	skos:inScheme ft:Fintech1000PlusScheme .   
+
+ft:Lending rdf:type skos:Concept;
+	skos:prefLabel "Lending"@en;
+	skos:broader ft:Banking;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+	
+ft:Payments rdf:type skos:Concept;
+	skos:prefLabel "Payments"@en;
+	skos:broader ft:Banking;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+	
+ft:Risk rdf:type skos:Concept;
+	skos:prefLabel "Risk"@en;
+	skos:broader ft:Banking;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+	
+ft:Data rdf:type skos:Concept;
+	skos:prefLabel "Data"@en;
+	skos:altLabel "Big Data"@en;
+	skos:broader ft:Banking;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+	
+
+ft:AI rdf:type skos:Concept;
+	skos:prefLabel "AI"@en;
+	skos:altLabel "Artificial Intelligence"@en;
+	skos:narrower ft:machineLearning;
+	skos:narrower ft:deepLearning;
+	skos:broader ft:Banking;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+	
+ft:machineLearning rdf:type skos:Concept;
+	skos:prefLabel "Machine Learning"@en;
+	skos:broader ft:AI;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+	
+ft:deepLearning rdf:type skos:Concept;
+	skos:prefLabel "Deep Learning"@en;
+	skos:broader ft:AI;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+	
+ft:Software rdf:type skos:Concept;
+	skos:prefLabel "Software"@en;
+	skos:broader ft:Banking;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+	
+ft:Compliance rdf:type skos:Concept;
+	skos:prefLabel "Compliance"@en;
+	skos:broader ft:Banking;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+	
+ft:Channels rdf:type skos:Concept;
+	skos:prefLabel "Channels"@en;
+	skos:altLabel "Digital Channels"@en;
+	skos:broader ft:fintech;
+	skos:inScheme ft:Fintech1000PlusScheme .   
+
+ft:ATM rdf:type skos:Concept;
+	skos:prefLabel "ATM"@en;
+	skos:altLabel "Automated Transfer Machine"@en;
+	skos:broader ft:Channels;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+	
+ft:POS rdf:type skos:Concept;
+	skos:prefLabel "POS"@en;
+	skos:altLabel "Point of Sale"@en;
+	skos:altLabel "Terminal"@en;
+	skos:altLabel "Point of Sale Terminal"@en;
+	skos:broader ft:Channels;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+	
+ft:API rdf:type skos:Concept;
+	skos:prefLabel "API"@en;
+	skos:altLabel "Application Programming Interface"@en;
+	skos:broader ft:Channels;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+	
+ft:USSD rdf:type skos:Concept;
+	skos:prefLabel "USSD"@en;
+	skos:broader ft:Channels;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+	
+ft:Mobile rdf:type skos:Concept;
+	skos:prefLabel "Mobile"@en;
+	skos:altLabel "Mobile Banking"@en;
+	skos:broader ft:Channels;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+	
+ft:Supervision rdf:type skos:Concept;
+	skos:prefLabel "Supervision"@en;
+	skos:broader ft:fintech;
+	skos:inScheme ft:Fintech1000PlusScheme .   
+
+ft:Settlement rdf:type skos:Concept;
+	skos:prefLabel "Settlement"@en;
+	skos:broader ft:Supervision;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+	
+ft:creditRegistry rdf:type skos:Concept;
+	skos:prefLabel "Credit Registry"@en;
+	skos:broader ft:Supervision;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+	
+ft:collateralRegistry rdf:type skos:Concept;
+	skos:prefLabel "Collateral Registry"@en;
+	skos:broader ft:Supervision;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+	
+ft:agencyNetwork rdf:type skos:Concept;
+	skos:prefLabel "Agency Network"@en;
+	skos:broader ft:Supervision;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+	
+ft:Identity rdf:type skos:Concept;
+	skos:prefLabel "Identity"@en;
+	skos:broader ft:Supervision;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+	
+ft:BVN rdf:type skos:Concept;
+	skos:prefLabel "Biometric Verification Number"@en;
+	skos:broader ft:Identity;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+	
+ft:Merchant rdf:type skos:Concept;
+	skos:prefLabel "Merchant"@en;
+	skos:broader ft:Supervision;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+	
+ft:MMT rdf:type skos:Concept;
+	skos:prefLabel "Mobile Money"@en;
+	skos:altLabel "Mobile Money Transfer"@en;
+	skos:broader ft:Supervision;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+	
+ft:P2P rdf:type skos:Concept;
+	skos:prefLabel "P2P"@en;
+	skos:broader ft:Supervision;
+	skos:inScheme ft:Fintech1000PlusScheme . 
+	
+ft:Regulation rdf:type skos:Concept;
+	skos:prefLabel "Regulation"@en;
+	skos:broader ft:fintech;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+
+ft:Cashless rdf:type skos:Concept;
+	skos:prefLabel "Cashless"@en;
+	skos:altLabel "Cashlite"@en;
+	skos:broader ft:Regulation;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+	
+ft:agentBanking rdf:type skos:Concept;
+	skos:prefLabel "Agent Banking"@en;
+	skos:broader ft:Regulation;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+	
+ft:financialInclusion rdf:type skos:Concept;
+	skos:prefLabel "Financial Inclusion"@en;
+	skos:broader ft:Regulation;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+	
+ft:cash rdf:type skos:Concept;
+	skos:prefLabel "Cash"@en;
+	skos:broader ft:Regulation;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+	
+ft:Security rdf:type skos:Concept;
+	skos:prefLabel "Security"@en;
+	skos:narrower ft:cybersecurity;
+	skos:broader ft:fintech;
+	skos:inScheme ft:Fintech1000PlusScheme .   
+
+ft:Policy rdf:type skos:Concept;
+	skos:prefLabel "Policy"@en;
+	skos:broader ft:fintech;
+	skos:inScheme ft:Fintech1000PlusScheme .   
+
+ft:cyberCurrency rdf:type skos:Concept;
+	skos:prefLabel "CyberCurrency"@en;
+	skos:narrower ft:bitcoin;
+	skos:broader ft:Currency;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+	
+ft:cybersecurity rdf:type skos:Concept;
+	skos:prefLabel "Cybersecurity"@en;
+	skos:broader ft:Security;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+	
+ft:bitcoin rdf:type skos:Concept;
+	skos:prefLabel "Bitcoin"@en;
+	skos:broader ft:Security;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+	
+ft:Blockchain rdf:type skos:Concept;
+	skos:prefLabel "Blockchain"@en;
+	skos:broader ft:Policy;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+
+ft:BOP rdf:type skos:Concept;
+	skos:prefLabel "Bottom of Pyramid"@en;
+	skos:broader ft:Policy;
+	skos:inScheme ft:Fintech1000PlusScheme .   
+
+ft:Currency rdf:type skos:Concept;
+	skos:prefLabel "Currency"@en;
+	skos:broader ft:Policy;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+	
+ft:Action rdf:type skos:Concept;
+	skos:prefLabel "Action"@en;
+	skos:broader ft:fintech;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+
+ft:Todo rdf:type skos:Concept;
+	skos:prefLabel "To do"@en;
+	skos:broader ft:Action;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+	
+ft:Lesson rdf:type skos:Concept;
+	skos:prefLabel "Lesson Learnt"@en;
+	skos:broader ft:Action;
+	skos:inScheme ft:Fintech1000PlusScheme .  
+	
+	
